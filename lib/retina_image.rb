@@ -12,25 +12,24 @@ class RetinaImage
     image_tag(srcset["1x"], options)
   end
 
-  private def srcset_from_source(source)
-    dir, file, extension = split_path(source)
-
-    (1..3).each_with_object({}) do |i, srcset|
-      scale = "#{i}x"
-      srcset[scale] = build_image_path(dir, "#{file}_#{scale}#{extension}")
-    end
-  end
-
   private def split_path(source)
     [
         File.dirname(source),
-        File.basename(source, '.*'),
+        filename(source),
         File.extname(source)
     ]
   end
 
+  private def filename(source)
+    File.basename(source, '.*')
+  end
+
+  private def alt(source)
+    filename(source).titleize
+  end
+
   private def build_image_path(dirname, filename)
-    asset_path = (dirname == '.' ? filename : File.join(dirname, filename))
-    image_path(asset_path)
+    path = (dirname == '.' ? filename : File.join(dirname, filename))
+    image_path(path)
   end
 end
