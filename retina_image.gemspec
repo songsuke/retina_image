@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.email       = ["songsukeja@gmail.com"]
   s.homepage    = "https://github.com/songsuke/retina_image"
   s.summary     = "Retina Image supports high resolution images"
-  s.description = "A simple retina image tag"
+  s.description = "A simple retina image tag for Rails"
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
