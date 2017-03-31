@@ -1,5 +1,5 @@
 module RetinaImage
-  class Tag
+  module ViewHelpers
     def retina_tag(source, options = {})
       options.reverse_merge!(include_srcsets: true)
 
@@ -15,9 +15,9 @@ module RetinaImage
 
     private def split_path(source)
       [
-          File.dirname(source),
-          filename(source),
-          File.extname(source)
+        File.dirname(source),
+        filename(source),
+        File.extname(source)
       ]
     end
 
