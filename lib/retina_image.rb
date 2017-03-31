@@ -1,4 +1,4 @@
-module RetinaImage
+class RetinaImage
   def retina_tag(source, options = {})
     options.reverse_merge!(include_srcsets: true)
 
