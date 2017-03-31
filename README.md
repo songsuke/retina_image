@@ -4,7 +4,29 @@ It will find the suitable image for any resolution for you.
 Also, this gem does not override your original image_tag.
 
 
+## Installation
+Add this line to your application's Gemfile:
+
+```ruby
+gem 'retina_image'
+```
+
+And then execute:
+```bash
+$ bundle
+```
+
+Or install it yourself as:
+```bash
+$ gem install retina_image
+```
+
 ## Usage
+Include module in your application helper or any helper in your app
+```ruby
+include RetinaImage::ViewHelpers
+```
+
 Add images as `example_1x.png`, `example_2x.png`, `example_3x.png` to your asset pipeline
 then add below code to your view.
 ```ruby
@@ -32,24 +54,6 @@ Output
 ```html
 <img src="/example_1x.png" alt="Example" >
 ``` 
-
-
-## Installation
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'retina_image'
-```
-
-And then execute:
-```bash
-$ bundle
-```
-
-Or install it yourself as:
-```bash
-$ gem install retina_image
-```
 
 ## Contributing
 Create pull requests. Raise issues.
