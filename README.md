@@ -1,12 +1,38 @@
 # RetinaImage
 Retina Image is a simple retina image tag that supports high resolution images using assets pipeline.
+It will find the suitable image for any resolution for you.
 Also, this gem does not override your original image_tag.
 
 
 ## Usage
+Add images as `example_1x.png`, `example_2x.png`, `example_3x.png` to your asset pipeline
+then add below code to your view.
 ```ruby
 <%= retina_image_tag 'example.png' %>
 ```
+Output
+```html
+<img srcset="/example_1x.png 1x, /example_2x.png 2x, /example_3x.png 3x" alt="Example" src="/example_1x.png">
+```
+
+Add other options. For example
+```ruby
+<%= retina_image_tag 'example.png', alt: 'Example Wow' %>
+```
+Output
+```html
+<img srcset="/example_1x.png 1x, /example_2x.png 2x, /example_3x.png 3x" alt="Example Wow" src="/example_1x.png">
+```
+
+Disable retina image tag by adding `include_srcsets: false`
+```ruby
+<%= retina_image_tag 'example.png', include_srcsets: false%>
+```
+Output
+```html
+<img src="/example_1x.png" alt="Example" >
+``` 
+
 
 ## Installation
 Add this line to your application's Gemfile:
@@ -26,7 +52,7 @@ $ gem install retina_image
 ```
 
 ## Contributing
-Contribution directions go here.
+Create pull requests. Raise issues.
 
 ## License
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
