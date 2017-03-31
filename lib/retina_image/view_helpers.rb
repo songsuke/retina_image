@@ -21,6 +21,15 @@ module RetinaImage
       ]
     end
 
+    private def srcset_from_source(source)
+      dir, file, extension = split_path(source)
+
+      (1..3).each_with_object({}) do |i, srcset|
+        scale = "#{i}x"
+        srcset[scale] = build_image_path(dir, "#{file}_#{scale}#{extension}")
+      end
+    end
+
     private def filename(source)
       File.basename(source, '.*')
     end
