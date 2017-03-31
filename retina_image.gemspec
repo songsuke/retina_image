@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = RetinaImage::VERSION
   s.authors     = ["Palm Stable"]
   s.email       = ["songsukeja@gmail.com"]
-  s.homepage    = "https://github.com/retina_image"
+  s.homepage    = "https://github.com/songsuke/retina_image"
   s.summary     = "Retina Image supports high resolution images"
   s.description = "A simple retina image tag"
   s.license     = "MIT"
@@ -17,6 +17,4 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "rails", "~> 5.0.2"
-
-  s.add_development_dependency "sqlite3"
 end
